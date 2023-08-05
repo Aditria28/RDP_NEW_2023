@@ -24,7 +24,7 @@ jobs:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - name: Turn on Access RDP.
       run: | 
-        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "Free-VirtualDesktop" -Value 0
+        Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "RDP_NEW_2023 -Value 0e 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
         copy wallpaper.bmp D:\a\wallpaper.bmp
@@ -34,7 +34,7 @@ jobs:
         ./wallpaper.bat
     - name: Make Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp --region ap 3389"'
-    - name: Connect To Your RDP CPU 2 Core - 7GB Ram - 256 SSD.
+    - name: Connect To Your RDP CPU 4 Core - 12GB Ram - 286 SSD.
       run: cmd /c start.bat
     - name: Changing Wallpaper...
       run: cmd /c wallpaper.bat
