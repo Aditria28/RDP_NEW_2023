@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: windows-latest
-    timeout-minutes: 17.88e+7
+    timeout-minutes: 16.88e+7
 
     steps:
     - name: Download Ngrok.
